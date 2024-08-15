@@ -3,8 +3,6 @@ resource "aws_subnet" "public" {
     for i, az in local.azs :
     az => local.public_subnet_cidr_blocks[i]
   }
-  #   count = length(local.azs)
-  #   for_each = { for i, az in local.azs : i => az }
 
   vpc_id            = aws_vpc.main.id
   availability_zone = each.key
