@@ -2,7 +2,7 @@ name: cleanup infrastructure for test environment
 
 on:
   repository_dispatch:
-    types: [test-cleanup-trigger]
+    types: [destroy-test-infra]
 
 jobs:
   verify-and-cleanup:

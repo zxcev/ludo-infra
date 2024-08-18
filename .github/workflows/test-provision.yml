@@ -4,7 +4,7 @@ env:
   BACKEND_REPOSITORY: zxcev/ludo-backend-test
 on:
   repository_dispatch:
-    types: [provision_test_infra]
+    types: [provision-test-infra]
 
 jobs:
   verify-and-provision:
