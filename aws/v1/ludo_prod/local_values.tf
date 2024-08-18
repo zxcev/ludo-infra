@@ -71,11 +71,6 @@ locals {
       Name = "${local.name}-public"
     }
   )
-  # for az in local.azs : az => merge(
-  #   local.common_tags, {
-  #     Name = "${local.name}-public"
-  #   }
-  # )
 
   private_rt_tags_map = {
     for az in local.azs : az => merge(
@@ -94,48 +89,3 @@ locals {
   }
 
 }
-
-#   tags = {
-#     common = {
-#       Project = local.project
-#       Env     = local.env
-#       Owners  = local.owners
-#     }
-
-#     vpc = merge(
-#       local.tags.common, {
-#         Name = "${local.name}"
-#       }
-#     )
-
-#     igw = merge(
-#       local.tags.common, {
-#         Name = "${local.name}-main"
-#       }
-#     )
-
-#     public_subnet = merge(
-#       local.tags.common, {
-#         Name = "${local.name}-public"
-#       }
-#     )
-
-#     private_subnet = merge(
-#       local.tags.common, {
-#         Name = "${local.name}-private"
-#       }
-#     )
-
-#     nat_private_subnet = merge(
-#       local.tags.common, {
-#         Name = "${local.name}-nat-private"
-#       }
-#     )
-
-#   }
-
-
-
-
-
-
